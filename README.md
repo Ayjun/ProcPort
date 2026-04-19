@@ -27,6 +27,9 @@ Many monitoring solutions verify software availability via TCP port queries. If 
 
 ### 📖 Installation & Usage
 **Prerequisites:**
+[!CAUTION]
+Use the Compiled Executable Only:
+You must use the pre-compiled .exe (generated via PyInstaller) found in the Releases section of this repository. The source code contains strict environment filters; therefore, installation and background service features will not function when running directly from the .py script.
 * Windows 10/11 or Windows Server.
 * Administrator rights (required for firewall control and service installation).
 
@@ -67,6 +70,9 @@ Viele Monitoring-Lösungen prüfen die Verfügbarkeit von Software über TCP-Por
 
 ### 📖 Installation & Nutzung
 **Voraussetzungen:**
+[!CAUTION]
+WICHTIG: Nur die kompilierte .exe verwenden:
+Für den Betrieb muss zwingend die im Repo unter Releases bereitgestellte, mit PyInstaller generierte .exe verwendet werden. Da der Code interne Abfragen auf den "Frozen"-Status nutzt, sind die Installations-Routinen und Hintergrund-Dienste im Skript-Modus (.py) deaktiviert und funktionieren dort nicht.
 * Windows 10/11 oder Windows Server.
 * Administratorrechte (zur Steuerung der Firewall und Installation von Diensten).
 
