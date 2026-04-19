@@ -1,12 +1,12 @@
 # ProcPort – Network Tracking Bridge
 
 Choose your language / Wählen Sie Ihre Sprache:
-* [English](#english-procport--network-tracking-bridge)
-* [Deutsch](#deutsch-procport--network-tracking-bridge)
+* [English](#english)
+* [Deutsch](#deutsch)
 
 ---
 
-## 🇺🇸 ENGLISH: ProcPort – Network Tracking Bridge
+## <a name="english"></a> 🇺🇸 ENGLISH: ProcPort – Network Tracking Bridge
 
 **ProcPort** is a utility for Windows designed to ensure the visibility of local applications for network monitoring software (e.g., PRTG, Checkmk, Zabbix). It functions as a **beacon** by opening a specific port as soon as a monitored process is active.
 
@@ -46,7 +46,7 @@ Run the `.exe` to launch the graphical user interface.
 
 ---
 
-## 🇩🇪 DEUTSCH: ProcPort – Network Tracking Bridge
+## <a name="deutsch"></a> 🇩🇪 DEUTSCH: ProcPort – Network Tracking Bridge
 
 **ProcPort** ist ein Hilfswerkzeug für Windows, das die Sichtbarkeit von lokalen Anwendungen für Netzwerk-Monitoring-Software (z. B. PRTG, Checkmk, Zabbix) sicherstellt. Es fungiert als **Signalfeuer (Beacon)**, indem es einen spezifischen Port öffnet, sobald ein zu überwachender Prozess aktiv ist.
 
