@@ -21,3 +21,9 @@ data_path_local/
 
 # Alter nicht mehr benötigter Code:
 /old/
+
+/dist/
+
+/build/
+
+*.spec
