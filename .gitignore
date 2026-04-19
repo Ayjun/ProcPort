@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments (Ganz wichtig!)
+venv/
+.venv/
+env/
+
+# PyCharm / IDE Folder
+.idea/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Lokale Daten/Logs deines Projekts (optional)
+*.log
+data_path_local/
+
+# Alter nicht mehr benötigter Code:
+/old/
