@@ -1,6 +1,7 @@
 import sys
 import time
 
+from model.tools import text_tools
 from model.tools.system_tools import SystemTools
 from model.tools.text_tools import TextTools, INSTALLED_PATH
 import subprocess
@@ -34,9 +35,9 @@ class Installer:
     def install_exe(self):
         current_file = sys.executable
         target_path = INSTALLED_PATH
-        target_file = os.path.join(target_path, "ProcPort.exe")
+        target_exe_file = os.path.join(target_path, "ProcPort.exe")
 
-        # 1. Verzeichnis erstellen
+        # 1. Verzeichnisse erstellen
         try:
             os.makedirs(target_path, exist_ok=True)
         except OSError as e:
@@ -46,8 +47,8 @@ class Installer:
         # 2. Datei kopieren
         try:
             # Verhindert Fehler, falls Quelle und Ziel identisch sind
-            if os.path.abspath(current_file) != os.path.abspath(target_file):
-                shutil.copy2(current_file, target_file)
+            if os.path.abspath(current_file) != os.path.abspath(target_exe_file):
+                shutil.copy2(current_file, target_exe_file)
         except Exception as e:
             logging.error(f"Fehler beim Kopieren der .exe: {e}")
             return
@@ -94,6 +95,24 @@ class Installer:
 
 
     def setup_execution_and_start(self):
+
+        # 5. Flag-Datei erstellen (inklusive Ordnerpfad)
+        if hasattr(self, '_flag_file_path') and not os.path.exists(self._flag_file_path):
+            try:
+                # Extrahiert den reinen Ordnerpfad aus dem Dateipfad
+                folder_path = os.path.dirname(self._flag_file_path)
+
+                # Erstellt alle notwendigen Zwischenordner, falls sie fehlen
+                if folder_path:
+                    os.makedirs(folder_path, exist_ok=True)
+
+                # 'x' erstellt die Datei, falls sie noch nicht vorhanden ist
+                with open(self._flag_file_path, 'x') as f:
+                    f.write('')  # Eine leere Datei schreiben
+                print(f"[+] Instanz-Flag erstellt.")
+            except Exception as e:
+                print(f"[-] Fehler beim Erstellen der Flag-Datei oder des Ordners: {e}")
+
         # Pfade vorbereiten (basierend auf deiner Installer-Struktur)
         target_script = self.target_exe_path
 

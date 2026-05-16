@@ -13,7 +13,7 @@ from model.tools.validate_tools import ValidateTools
 import threading
 
 class Main:
-    version = "2.1"
+    version = "2.2"
 
     def __init__(self):
         self.proc = None
